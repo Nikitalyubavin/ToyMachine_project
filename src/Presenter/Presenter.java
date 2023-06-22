@@ -24,4 +24,27 @@ public class Presenter {
     public void showInfo() {
         service.showInfo();
     }
+
+    public void adminShowInfo() {
+        service.adminShowInfo();
+    }
+
+    public int toyListGetSize() {
+        return service.toyListGetSize();
+    }
+
+    public void changeName(int index, String name) {
+        service.changeName(index, name);
+    }
+    public void changeDesc(int index, String name) {
+        service.changeDesc(index, name);
+    }
+
+    public void changeRate(int index, int rate) {
+        service.changeRate(index, rate);
+    }
+
+    public void save() {
+        service.save();
+    }
 }

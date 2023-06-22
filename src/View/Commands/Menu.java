@@ -11,7 +11,7 @@ public class Menu {
     public Menu(Console console) {
         this.commands = new ArrayList<>();
         commands.add(new Play(console));
-        commands.add(new AddToy(console));
+        commands.add(new Admin(console));
         commands.add(new ShowToys(console));
         commands.add(new Exit(console));
     }
@@ -26,5 +26,9 @@ public class Menu {
 
     public void execute(int choice){
         commands.get(choice - 1).execute();
+    }
+
+    public int getSize() {
+        return commands.size();
     }
 }

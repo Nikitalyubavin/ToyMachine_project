@@ -47,4 +47,39 @@ public class Toys {
         sb.append(toyName + ", " + getToyDescription() + "\n");
         return sb.toString();
     }
+
+    public String adminShowInfo() {
+        StringBuilder sb = new StringBuilder();
+        if (getToyRate()<=1) {
+            sb.append(id +
+                    ".\tИгрушка: " + toyName +
+                    "\n\tОписание: " + getToyDescription() +
+                    "\n\tВероятность выигрыша: низкая\n");
+            return sb.toString();
+        } else if (getToyRate()>1 && getToyRate()<=4){
+            sb.append(id +
+                    ".\tИгрушка: " + toyName +
+                    "\n\tОписание: " + getToyDescription() +
+                    "\n\tВероятность выигрыша: средняя\n");
+            return sb.toString();
+        } else {
+            sb.append(id +
+                    ".\tИгрушка: " + toyName +
+                    "\n\tОписание: " + getToyDescription() +
+                    "\n\tВероятность выигрыша: высокая\n");
+            return sb.toString();
+        }
+    }
+
+    public void setToyRate(int toyRate) {
+        this.toyRate = toyRate;
+    }
+
+    public void setToyName(String toyName) {
+        this.toyName = toyName;
+    }
+
+    public void setToyDescription(String toyDescription) {
+        this.toyDescription = toyDescription;
+    }
 }

@@ -1,21 +1,21 @@
 package View.Commands;
 import View.Console;
 
-public class AddToy implements Commandable{
+public class Admin implements Commandable{
     private Console console;
 
-    public AddToy(Console console) {
+    public Admin(Console console) {
         this.console = console;
     }
 
     @Override
     public String print() {
-        String desc = "Добавить игрушку";
+        String desc = "Меню администратора";
         return desc;
     }
 
     @Override
     public void execute() {
-        console.addToy();
+        console.admin();
     }
 }
