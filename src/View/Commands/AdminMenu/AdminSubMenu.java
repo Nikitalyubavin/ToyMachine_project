@@ -13,6 +13,7 @@ public class AdminSubMenu {
         adm.add(new AdminShowInfo(console));
         adm.add(new AdminEditInfo(console));
         adm.add(new AdminAddToy(console));
+        adm.add(new AdminDelete(console));
         adm.add(new AdminBackToMenu(console));
     }
     public void start(){

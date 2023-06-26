@@ -16,6 +16,6 @@ public class No implements Savable{
 
     @Override
     public void execute() {
-        console.exit();
+        console.quit();
     }
 }

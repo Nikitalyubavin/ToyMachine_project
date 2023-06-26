@@ -27,8 +27,12 @@ public class ToyMachine implements Serializable {
 
     public String showInfo(){
         StringBuilder sb = new StringBuilder();
-        for (Toys toy: toysList){
-            sb.append(toy.showInfo());
+        if (toysList.size() > 0){
+            for (Toys toy: toysList){
+                sb.append(toy.showInfo());
+            }
+        } else {
+            sb.append("К сожалению, игрушки ещё не завезли...");
         }
         return sb.toString();
     }
@@ -51,8 +55,15 @@ public class ToyMachine implements Serializable {
         if (winRate <= 1){
             if (check(lowRate)){
                 System.out.println(lowRate.get(lowWinRate).showToy());
-                toysList.remove(lowRate.get(lowWinRate));
-                lowRate.remove(lowWinRate);
+                if (toysList.get(toysList.indexOf(lowRate.get(lowWinRate))).getQuantity() > 1){
+                    toysList.get(toysList.indexOf(lowRate.get(lowWinRate))).setQuantity();
+                } else {
+                    toysList.remove(lowRate.get(lowWinRate));
+                    lowRate.remove(lowWinRate);
+                    for (int i = lowWinRate; i < toysList.size(); i++){
+                        toysList.get(i).setId(i+1);
+                    }
+                }
             } else {
                 unluck();
             }
@@ -60,8 +71,15 @@ public class ToyMachine implements Serializable {
         else if (winRate > 1 && winRate <= 4){
             if (check(mediumRate)) {
                 System.out.println(mediumRate.get(mediumWinRate).showToy());
-                toysList.remove(mediumRate.get(mediumWinRate));
-                mediumRate.remove(mediumWinRate);
+                if (toysList.get(toysList.indexOf(mediumRate.get(mediumWinRate))).getQuantity() > 1){
+                    toysList.get(toysList.indexOf(mediumRate.get(mediumWinRate))).setQuantity();
+                } else {
+                    toysList.remove(mediumRate.get(mediumWinRate));
+                    mediumRate.remove(mediumWinRate);
+                    for (int i = mediumWinRate; i < toysList.size(); i++){
+                        toysList.get(i).setId(i+1);
+                    }
+                }
             } else {
                 unluck();
             }
@@ -69,8 +87,15 @@ public class ToyMachine implements Serializable {
         else {
             if (check(highRate)) {
                 System.out.println(highRate.get(highWinRate).showToy());
-                toysList.remove(highRate.get(highWinRate));
-                highRate.remove(highWinRate);
+                if (toysList.get(toysList.indexOf(highRate.get(highWinRate))).getQuantity() > 1) {
+                    toysList.get(toysList.indexOf(highRate.get(highWinRate))).setQuantity();
+                } else {
+                    toysList.remove(highRate.get(highWinRate));
+                    highRate.remove(highWinRate);
+                    for (int i = highWinRate; i < toysList.size(); i++){
+                        toysList.get(i).setId(i+1);
+                    }
+                }
             } else {
                 unluck();
             }
@@ -88,8 +113,12 @@ public class ToyMachine implements Serializable {
 
     public String adminShowInfo() {
         StringBuilder sb = new StringBuilder();
-        for (Toys toy : toysList) {
-            sb.append(toy.adminShowInfo());
+        if (toysList.size()>0){
+            for (Toys toy : toysList) {
+                sb.append(toy.adminShowInfo());
+            }
+        } else {
+            sb.append("В автомате нет игрушек...");
         }
         return sb.toString();
     }
@@ -108,5 +137,32 @@ public class ToyMachine implements Serializable {
 
     public void changeRate(int index, int rate) {
         toysList.get(index-1).setToyRate(rate);
+    }
+
+    public List<Toys> getToysList(){
+        return toysList;
+    }
+
+    public void delete(int ans) {
+//        if (toysList.size() > 0){
+            if (toysList.get(ans-1).getToyRate() <= 1){
+                lowRate.remove(toysList.get(ans-1));
+            } else if (toysList.get(ans-1).getToyRate() > 1 && toysList.get(ans-1).getToyRate() <= 4){
+                mediumRate.remove(toysList.get(ans-1));
+            } else {
+                highRate.remove(toysList.get(ans-1));
+            }
+            toysList.remove(ans-1);
+            for (int i = ans-1; i < toysList.size(); i++){
+                toysList.get(i).setId(i+1);
+            }
+            System.out.println("Игрушка успешно удалена из списка!");
+//        } else {
+//            System.out.println("В автомате больше не осталось игрушек...");
+//        }
+    }
+
+    public boolean checkList() {
+        return (toysList.size() > 0);
     }
 }

@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de5319b-bef3-4000-9164-646c317a874d" name="Changes" comment="">
+    <list default="true" id="3de5319b-bef3-4000-9164-646c317a874d" name="Changes" comment="Added more options">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/ToyMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ToyMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Toys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Toys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/WorkWithFiles/Filer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/WorkWithFiles/Filer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presenter/Presenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presenter/Presenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Commands/AddToy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Commands/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Commands/Exit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Commands/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Commands/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Commands/AdminMenu/AdminSubMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Commands/AdminMenu/AdminSubMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Commands/SaveChanges/No.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Commands/SaveChanges/No.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Commands/SaveChanges/Yes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Commands/SaveChanges/Yes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Console.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +63,25 @@
       <option name="presentableId" value="Default" />
       <updated>1687254507537</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added more options">
+      <created>1687446607873</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687446607873</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added more options">
+      <created>1687446629206</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687446629206</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added more options" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more options" />
   </component>
 </project>

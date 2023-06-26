@@ -2,11 +2,17 @@ package Model;
 
 import Model.WorkWithFiles.Writable;
 
-public class Service {
-    private int id = 1;
+import java.io.Serializable;
+
+public class Service implements Serializable {
+    private int id;
     private Writable writable;
     private final String filePath = "Toys.txt";
     private ToyMachine tm;
+
+    public Service(ToyMachine tm) {
+        this.tm = tm;
+    }
 
     public Service() {
         this.tm = new ToyMachine();
@@ -16,12 +22,15 @@ public class Service {
         tm.play();
     }
 
-    public void addToy(String name, String desc, Integer rate) {
+    public void addToy(String name, String desc, Integer rate, Integer quantity) {
+        if (tm.getToysList().size() > 0){
+            id = tm.getToysList().size() + 1;
+        } else id = 1;
         if (desc == null){
-            tm.addToy(new Toys(id++, rate, name));
+            tm.addToy(new Toys(id, rate, name, quantity));
         }
         else{
-            tm.addToy(new Toys(id++, rate, name, desc));
+            tm.addToy(new Toys(id, rate, name, desc, quantity));
         }
     }
 
@@ -63,6 +72,14 @@ public class Service {
     }
     public void setWritable(Writable writable) {
         this.writable = writable;
+    }
+
+    public void delete(int ans) {
+        tm.delete(ans);
+    }
+
+    public boolean checkList() {
+        return tm.checkList();
     }
 }
 

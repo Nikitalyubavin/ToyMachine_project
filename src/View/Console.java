@@ -67,7 +67,17 @@ public class Console {
         if (checkRate(rating)) {
             rate = Integer.parseInt(rating);
         }
-        presenter.addToy(name, desc, rate);
+        System.out.print("Введите количество данных игрушек: ");
+        String quan = sc.nextLine();
+        int quantity = 1;
+        if (checkQuantity(quan)) {
+            quantity = Integer.parseInt(quan);
+        }
+        presenter.addToy(name, desc, rate, quantity);
+    }
+
+    private boolean checkQuantity(String text) {
+        return (text.matches("[0-9]+") && Integer.parseInt(text) > 0);
     }
 
     private boolean checkRate(String text) {
@@ -75,8 +85,12 @@ public class Console {
     }
 
     public void play() {
-        System.out.print("Вам выпала игрушка: ");
-        presenter.play();
+        if (presenter.checkList()){
+            System.out.print("Вам выпала игрушка: ");
+            presenter.play();
+        } else {
+            System.out.println("Наш автомат пуст... Попробуйте в другой раз! ;)");
+        }
     }
 
     public void exit() {
@@ -86,9 +100,11 @@ public class Console {
         String ans = sc.nextLine();
         if (checkMenu(ans)){
             saving.execute(Integer.parseInt(ans));
-        } else System.out.println("Программа Вас не поняла... " +
-                "Изменения будут сохранены автоматически!");
-        System.out.println("До новых встреч!");
+        } else {
+            System.out.println("Программа Вас не поняла... " +
+                    "Изменения будут сохранены автоматически!");
+            save();
+        }
     }
 
     private boolean checkMenu(String text) {
@@ -123,29 +139,33 @@ public class Console {
     }
 
     public void edit() {
-        adminShowInfo();
-        String ans = null;
-        while (work()){
-            System.out.print("Выберите игрушку: ");
-            ans = sc.nextLine();
-            if (checkToy(ans)){
-                break;
-            } else {
-                System.out.println("Выбранной Вами игрушки не существует! " +
-                        "Попробуйте ещё раз.");
+        if (presenter.checkList()){
+            adminShowInfo();
+            String ans = null;
+            while (work()){
+                System.out.print("Выберите игрушку: ");
+                ans = sc.nextLine();
+                if (checkToy(ans)){
+                    break;
+                } else {
+                    System.out.println("Выбранной Вами игрушки не существует! " +
+                            "Попробуйте ещё раз.");
+                }
             }
-        }
-        editMenu.start();
-        while (work()){
-            System.out.print("Выберите, что хотите поменять: ");
-            String choice = sc.nextLine();
-            if (checkChoice(choice)){
-                editMenu.execute(Integer.parseInt(ans), Integer.parseInt(choice));
-                break;
-            } else {
-                System.out.println("Такой опции не существует! " +
-                        "Посмотрите внимательнее меню и выберете ещё раз!");
+            editMenu.start();
+            while (work()){
+                System.out.print("Выберите, что хотите поменять: ");
+                String choice = sc.nextLine();
+                if (checkChoice(choice)){
+                    editMenu.execute(Integer.parseInt(ans), Integer.parseInt(choice));
+                    break;
+                } else {
+                    System.out.println("Такой опции не существует! " +
+                            "Посмотрите внимательнее меню и выберете ещё раз!");
+                }
             }
+        } else {
+            System.out.println("В автомате нет игрушек...");
         }
     }
 
@@ -184,5 +204,31 @@ public class Console {
 
     public void save() {
         presenter.save();
+        quit();
+    }
+
+    public void quit(){
+        var = false;
+        System.out.println("До новых встреч!");
+    }
+
+    public void delete() {
+        if (presenter.checkList()){
+            adminShowInfo();
+            String ans = null;
+            while (work()){
+                System.out.print("Выберите игрушку, которую хотите удалить: ");
+                ans = sc.nextLine();
+                if (checkToy(ans)){
+                    break;
+                } else {
+                    System.out.println("Выбранной Вами игрушки не существует! " +
+                            "Попробуйте ещё раз.");
+                }
+            }
+            presenter.delete(Integer.parseInt(ans));
+        } else {
+            System.out.println("В автомате нет игрушек...");
+        }
     }
 }

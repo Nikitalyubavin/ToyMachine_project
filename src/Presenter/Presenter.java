@@ -13,8 +13,8 @@ public class Presenter {
         this.service = new Service();
     }
 
-    public void addToy(String name, String desc, Integer rate) {
-        service.addToy(name, desc, rate);
+    public void addToy(String name, String desc, Integer rate, Integer quantity) {
+        service.addToy(name, desc, rate, quantity);
     }
 
     public void play() {
@@ -46,5 +46,13 @@ public class Presenter {
 
     public void save() {
         service.save();
+    }
+
+    public void delete(int ans) {
+        service.delete(ans);
+    }
+
+    public boolean checkList() {
+        return service.checkList();
     }
 }

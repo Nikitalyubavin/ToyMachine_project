@@ -2,7 +2,7 @@ package Model.WorkWithFiles;
 
 import java.io.*;
 
-public class Filer implements Writable{
+public class Filer implements Writable, Serializable{
     private static final long serialVersionUID = 1L;
 
     @Override
