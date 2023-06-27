@@ -100,6 +100,9 @@ public class Toys implements Serializable {
     public void setToyDescription(String toyDescription) {
         this.toyDescription = toyDescription;
     }
+    public void setToyQuantity(int quantity){
+        this.quantity = quantity;
+    }
 
     public void setId(int id){
         this.id = id;

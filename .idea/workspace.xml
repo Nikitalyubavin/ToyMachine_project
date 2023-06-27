@@ -4,16 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de5319b-bef3-4000-9164-646c317a874d" name="Changes" comment="Added more options">
+    <list default="true" id="3de5319b-bef3-4000-9164-646c317a874d" name="Changes" comment="Modified several classes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Toys.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Toys.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/ToyMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ToyMachine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Toys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Toys.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/WorkWithFiles/Filer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/WorkWithFiles/Filer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Presenter/Presenter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Presenter/Presenter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Commands/AdminMenu/AdminSubMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Commands/AdminMenu/AdminSubMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/Commands/SaveChanges/No.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Commands/SaveChanges/No.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Commands/AdminMenu/EditMenu/ChangeName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Commands/AdminMenu/EditMenu/ChangeName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/Commands/AdminMenu/EditMenu/EditMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Commands/AdminMenu/EditMenu/EditMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Console.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,11 +76,19 @@
       <option name="project" value="LOCAL" />
       <updated>1687446629206</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Modified several classes">
+      <created>1687777682020</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687777682020</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added more options" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added more options" />
+    <MESSAGE value="Modified several classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified several classes" />
   </component>
 </project>

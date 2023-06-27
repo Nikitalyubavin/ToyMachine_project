@@ -81,5 +81,9 @@ public class Service implements Serializable {
     public boolean checkList() {
         return tm.checkList();
     }
+
+    public void changeQuantity(int index, int quantity) {
+        tm.changeQuantity(index, quantity);
+    }
 }
 

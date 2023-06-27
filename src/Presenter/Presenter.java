@@ -55,4 +55,8 @@ public class Presenter {
     public boolean checkList() {
         return service.checkList();
     }
+
+    public void changeQuantity(int index, int quantity) {
+        service.changeQuantity(index, quantity);
+    }
 }

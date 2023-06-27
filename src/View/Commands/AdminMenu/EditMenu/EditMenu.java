@@ -13,6 +13,7 @@ public class EditMenu {
         this.edit = new ArrayList<>();
         edit.add(new ChangeName(console));
         edit.add(new ChangeDesc(console));
+        edit.add(new ChangeQuantity(console));
         edit.add(new ChangeRate(console));
         edit.add(new BackToAdminMenu(console));
     }

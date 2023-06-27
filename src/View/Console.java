@@ -193,7 +193,7 @@ public class Console {
     }
 
     public void changeRate(int index) {
-        System.out.println("Вероятность выпадения: ");
+        System.out.print("Вероятность выпадения: ");
         String rate = sc.nextLine();
         if (!checkRate(rate)){
             System.out.println("Неверно задано значение! Оно будет выставлено по умолчанию.");
@@ -230,5 +230,15 @@ public class Console {
         } else {
             System.out.println("В автомате нет игрушек...");
         }
+    }
+
+    public void changeQuantity(int index) {
+        System.out.print("Количество: ");
+        String quantity = sc.nextLine();
+        if (!checkQuantity(quantity)){
+            System.out.println("Неверно задано значение! Оно будет выставлено по умолчанию.");
+            quantity = "1";
+        }
+        presenter.changeQuantity(index, Integer.parseInt(quantity));
     }
 }

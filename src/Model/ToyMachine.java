@@ -144,25 +144,25 @@ public class ToyMachine implements Serializable {
     }
 
     public void delete(int ans) {
-//        if (toysList.size() > 0){
-            if (toysList.get(ans-1).getToyRate() <= 1){
-                lowRate.remove(toysList.get(ans-1));
-            } else if (toysList.get(ans-1).getToyRate() > 1 && toysList.get(ans-1).getToyRate() <= 4){
-                mediumRate.remove(toysList.get(ans-1));
-            } else {
-                highRate.remove(toysList.get(ans-1));
-            }
-            toysList.remove(ans-1);
-            for (int i = ans-1; i < toysList.size(); i++){
-                toysList.get(i).setId(i+1);
-            }
-            System.out.println("Игрушка успешно удалена из списка!");
-//        } else {
-//            System.out.println("В автомате больше не осталось игрушек...");
-//        }
+        if (toysList.get(ans-1).getToyRate() <= 1){
+            lowRate.remove(toysList.get(ans-1));
+        } else if (toysList.get(ans-1).getToyRate() > 1 && toysList.get(ans-1).getToyRate() <= 4){
+            mediumRate.remove(toysList.get(ans-1));
+        } else {
+            highRate.remove(toysList.get(ans-1));
+        }
+        toysList.remove(ans-1);
+        for (int i = ans-1; i < toysList.size(); i++){
+            toysList.get(i).setId(i+1);
+        }
+        System.out.println("Игрушка успешно удалена из списка!");
     }
 
     public boolean checkList() {
         return (toysList.size() > 0);
+    }
+
+    public void changeQuantity(int index, int quantity) {
+        toysList.get(index-1).setToyQuantity(quantity);
     }
 }
